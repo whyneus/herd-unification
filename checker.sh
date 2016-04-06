@@ -40,5 +40,8 @@ then
   diff --suppress-common-lines -y ${workdir}/iptables-pre ${workdir}/iptables-post
   diff --suppress-common-lines -y ${workdir}/iptablesnat-pre ${workdir}/iptablesnat-post
   diff --suppress-common-lines -y ${workdir}/netstat-pre ${workdir}/netstat-post
-  diff --suppress-common-lines -y ${workdir}/services-pre ${workdir}/services-post
+  diff --suppress-common-lines -y ${workdir}/services-pre ${workdir}/services-post | egrep -v 'pid.*pid|Chain|^Table\:'
+  echo POST check done.
+else
+  echo PRE check done.
 fi
