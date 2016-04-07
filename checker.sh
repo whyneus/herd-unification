@@ -18,11 +18,17 @@ then
 else
   if [[ ${uptime} -lt 300 ]]
   then
-#    sleep $((300-${uptime}))
+    # sleep $((300-${uptime}))
     sleep 25
   fi
   state="post"
-  /usr/bin/simpana restart >/dev/null
+
+  backupagent=`which simpana 2>/dev/null`
+  if [[ ! -z ${backupagent} ]]
+  then
+    echo restart simpana
+    ${backupagent} restart >/dev/null
+  fi
   sleep 10
 fi
 
