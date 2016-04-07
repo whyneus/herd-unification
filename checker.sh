@@ -28,8 +28,8 @@ else
   then
     echo restart simpana
     ${backupagent} restart >/dev/null
+    sleep 10
   fi
-  sleep 10
 fi
 
 netstat -nutlp | awk -F'[ /]+' '/tcp/ {print $8}' | sort | column -t | uniq > ${workdir}/netstat-${state}
