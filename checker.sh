@@ -2,7 +2,7 @@
 
 if [[ ! -f /etc/redhat-release ]]
 then
-  echo MANCHKREQ
+  echo "!!!!! CHECK MANUALLY !!!!! UNSUPPORTED OS !!!!!"
   exit 1
 fi
 
