@@ -26,7 +26,6 @@ else
   backupagent=`which simpana 2>/dev/null`
   if [[ ! -z ${backupagent} ]]
   then
-    echo restart simpana
     ${backupagent} restart >/dev/null
     sleep 10
   fi
